@@ -78,14 +78,14 @@ export function OrderAside(props: OrderProps) {
 export function CartDrawer(props: OrderProps & { onClose: () => void }) {
   const { lines, totalText, sent, mesaLabel, onClose } = props;
   return (
-    <div className="drawer" role="dialog" aria-modal="true" aria-label="Tu pedido">
-      <div className="backdrop" onClick={onClose} />
-      <div className="drawer-panel">
-        <div className="drawer-head">
+    <div className="sb-drawer" role="dialog" aria-modal="true" aria-label="Tu pedido">
+      <div className="sb-backdrop" onClick={onClose} />
+      <div className="sb-drawer-panel">
+        <div className="sb-drawer-head">
           <h2 className="display" style={{ margin: 0, fontSize: 32, lineHeight: 1, color: 'var(--crema)' }}>Tu pedido</h2>
           <button className="icon-btn thick" onClick={onClose} aria-label="Cerrar">×</button>
         </div>
-        <div className="drawer-body">
+        <div className="sb-drawer-body">
           {mesaLabel && (
             <span className="display" style={{ alignSelf: 'flex-start', fontSize: 20, border: '2px solid var(--tinta)', borderRadius: 6, padding: '4px 10px', background: 'var(--papel)' }}>
               {mesaLabel}
@@ -94,7 +94,7 @@ export function CartDrawer(props: OrderProps & { onClose: () => void }) {
           {sent && <SentNotice big />}
           {lines.length === 0 && !sent && <Empty size={16} />}
           {lines.map((l) => (
-            <div key={l.key} className="cart-line drawer-line">
+            <div key={l.key} className="cart-line sb-drawer-line">
               <span className="display" style={{ fontSize: 22, lineHeight: 1.05, color: 'var(--rojo-osc)' }}>{l.name}</span>
               <span className="display" style={{ fontSize: 22, textTransform: 'none' }}>{l.totalText}</span>
               <span className="muted" style={{ fontSize: 14, lineHeight: '20px' }}>{l.desc}</span>
@@ -103,7 +103,7 @@ export function CartDrawer(props: OrderProps & { onClose: () => void }) {
           ))}
         </div>
         {lines.length > 0 && (
-          <div className="drawer-foot">
+          <div className="sb-drawer-foot">
             <Total totalText={totalText} />
             <Checkout {...props} />
           </div>

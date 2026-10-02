@@ -8,11 +8,11 @@ export function Modal({ title, onClose, width = 480, z, children }: {
   title: string; onClose: () => void; width?: number; z?: number; children: ReactNode;
 }) {
   return (
-    <div className="overlay" style={z ? { zIndex: z } : undefined} role="dialog" aria-modal="true" aria-label={title}>
-      <div className="backdrop" onClick={onClose} />
-      <div className="card modal" style={{ width: `min(${width}px, 100%)` }}>
-        <div className="modal-head">
-          <h2 className="display modal-title">{title}</h2>
+    <div className="sb-overlay" style={z ? { zIndex: z } : undefined} role="dialog" aria-modal="true" aria-label={title}>
+      <div className="sb-backdrop" onClick={onClose} />
+      <div className="card sb-modal" style={{ width: `min(${width}px, 100%)` }}>
+        <div className="sb-modal-head">
+          <h2 className="display sb-modal-title">{title}</h2>
           <button className="icon-btn" onClick={onClose} aria-label="Cerrar">×</button>
         </div>
         {children}
@@ -23,8 +23,8 @@ export function Modal({ title, onClose, width = 480, z, children }: {
 
 export function PromoModal({ onClose, onApply }: { onClose: () => void; onApply: () => void }) {
   return (
-    <div className="overlay" role="dialog" aria-modal="true" aria-label="Promoción">
-      <div className="backdrop" onClick={onClose} />
+    <div className="sb-overlay" role="dialog" aria-modal="true" aria-label="Promoción">
+      <div className="sb-backdrop" onClick={onClose} />
       <div className="promo">
         <button className="icon-btn thick" onClick={onClose} aria-label="Cerrar">×</button>
         <span className="display" style={{ fontSize: 88, lineHeight: 0.9, color: 'var(--crema)' }}>10% dscto.</span>

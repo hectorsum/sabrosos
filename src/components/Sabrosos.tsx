@@ -226,7 +226,7 @@ export default function Sabrosos({ mesa, whatsapp, promo, armaVista }: Props) {
           <h2 className="display" style={{ margin: 0, fontSize: 'clamp(40px, 6vw, 64px)', lineHeight: 0.95 }}>Pide por WhatsApp</h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16 }}>
             <a className="btn btn-cream" href={`https://wa.me/${whatsapp}`} target="_blank" rel="noreferrer">Escríbenos</a>
-            <a className="btn ig-btn" style={{ padding: '12px 24px', fontSize: 24 }} href={`https://instagram.com/${INSTAGRAM}`} target="_blank" rel="noreferrer">
+            <a className="btn ig-btn" style={{ padding: '12px 24px', fontSize: 24 }} href={`https://www.instagram.com/${INSTAGRAM}/`} target="_blank" rel="noreferrer">
               @{INSTAGRAM}
             </a>
           </div>
